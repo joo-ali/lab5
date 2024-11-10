@@ -15,7 +15,7 @@ jobs:
              - name: run test
                run: pyrhon -m unittrst test.py      
      deploy:
-         need: run-tests   
+         needs: run-tests   
          runs-on: ubuntu-latest
          steps:
              - name: checkout
