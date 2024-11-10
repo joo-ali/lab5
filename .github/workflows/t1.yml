@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+=======
+name: 2b-test-cases
+on: push
+jobs:
+     run-tastes:
+         runs-on: ubuntu-latest
+         steps:
+             - name: checkout
+               uses: actions/checkout@v4
+             - name: install dependancies
+               uses: actions/setup-python@v2
+               with:
+                 python-version: '3.x'
+             - name: install libiraries
+               run: pip install -r requirments.txt
+             - name: run test
+               run: pyrhon -m unittrst test.py      
+     deploy:
+         needs: run-tastes 
+         runs-on: ubuntu-latest
+         steps:
+             - name: checkout
+               uses: actions/checkout@v4 
+             - name: deploy-done
+               run: echo "Deployed Succsseful"
+>>>>>>> 628ff6a3502859545baa090265d6a11f0616b38f
